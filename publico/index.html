@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NexaVarejo | Produtos e estoque</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <div class="largura">
+      <p class="marca">NexaVarejo</p>
+      <h1>Produtos e controle de estoque</h1>
+      <p>Uma forma simples de acompanhar os produtos da sua loja.</p>
+    </div>
+  </header>
+  <main class="largura">
+    <section class="painel" aria-labelledby="titulo-cadastro">
+      <h2 id="titulo-cadastro">Cadastrar produto</h2>
+      <form id="form-produto">
+        <div class="grade">
+          <label>Nome do produto
+            <input name="nome" required maxlength="100" autocomplete="off">
+          </label>
+          <label>Código do produto
+            <input name="codigo" required maxlength="40" autocomplete="off">
+          </label>
+          <label>Categoria
+            <input name="categoria" maxlength="60">
+          </label>
+          <label>Preço (R$)
+            <input name="preco" type="number" min="0" step="0.01" required>
+          </label>
+          <label>Quantidade em estoque
+            <input name="quantidade" type="number" min="0" step="1" required>
+          </label>
+        </div>
+        <button type="submit">Cadastrar produto</button>
+      </form>
+      <p id="mensagem" role="status" aria-live="polite"></p>
+    </section>
+    <section class="painel" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Produtos cadastrados</h2>
+      <label for="pesquisa">Pesquisar por nome ou código</label>
+      <input id="pesquisa" type="search" placeholder="Digite para pesquisar">
+      <div class="tabela-rolagem">
+        <table>
+          <thead><tr><th>Produto</th><th>Código</th><th>Preço</th><th>Quantidade</th><th>Situação</th><th>Ações</th></tr></thead>
+          <tbody id="lista-produtos"><tr><td colspan="6">Carregando produtos...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer><div class="largura">NexaVarejo MVP — projeto acadêmico</div></footer>
+  <script src="app.js"></script>
+</body>
+</html>

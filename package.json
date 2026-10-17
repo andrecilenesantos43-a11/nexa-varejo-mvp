@@ -1,0 +1,29 @@
+{
+  "name": "nexa-varejo-mvp",
+  "version": "1.0.0",
+  "description": "Sistema web simples de produtos e estoque para o NexaVarejo MVP",
+  "main": "src/servidor.js",
+  "scripts": {
+    "iniciar": "node src/servidor.js",
+    "dev": "node --watch src/servidor.js",
+    "testes": "jest --runInBand",
+    "cobertura": "jest --coverage --runInBand",
+    "start": "node src/servidor.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/servidor.js",
+      "!src/banco.js"
+    ]
+  }
+}
